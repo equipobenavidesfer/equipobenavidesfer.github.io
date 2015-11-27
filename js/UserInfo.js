@@ -1,5 +1,14 @@
 $(document).ready(function(){
-alert("Systems Ready and Waiting.")
+
+
+
+  $('body').on('click', '.artistcl', function() {
+  var artistlookup = $(this).text();
+  alert(artistlookup); //TO ADD: A MODAL TO THE HTML, AND AN ARTIST LOOKUP USING THIS STRING, ATTACHING TO THE MODAL :)
+});
+
+
+//alert("Systems Ready and Waiting.")
   $("#usernamebtn").on("click", function(){
     $('#mydiv').html('');
     $('#usersTop').html('');
@@ -40,10 +49,11 @@ alert("Systems Ready and Waiting.")
 
     for (i=0; i<6; i++ ){
 
-             $('#usersTop').append('<br>' + data.recenttracks.track[i].artist['#text']); //ARTIST. [0] = TRACK's NUMBER
-              $('#usersTop').append('<br>' + data.recenttracks.track[i].name); // Nombre de la pista
+             $('#usersTop').append('<p class=\"artistcl\">' + data.recenttracks.track[i].artist['#text'] + '</p>'); //ARTIST. [0] = TRACK's NUMBER
+              $('#usersTop').append(data.recenttracks.track[i].name); // Nombre de la pista
               $('#usersTop').append('<br>' + data.recenttracks.track[i].album['#text']); //Nombre del album
               $('#usersTop').append('<br><img src=\"' + data.recenttracks.track[i].image[1]['#text'] + '\"><br><br><br>'); //Img del album
+                $('#usersTop').append('<p>test</p>');
           //    $('#success #artistBio').append('<br>' + data.recenttracks.album["#text"]);
           //   $('#success #artistBio').append('<img src="' + data.recenttracks.image[1]['#text'] + '" />');
         }
@@ -58,6 +68,7 @@ alert("Systems Ready and Waiting.")
 
 
    });//click handler
+
 
 
 
