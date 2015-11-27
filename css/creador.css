@@ -20,14 +20,11 @@ header h1{
 
 }
 
-form{
-  margin-left: 350px;
-}
 #subir{
   margin-left: 250px;
 }
 
-label{
+ /*label{
     display: inline-block;
     float: left;
     clear: left;
@@ -38,7 +35,7 @@ label{
 input {
   display: inline-block;
   float: left;
-}
+}*/
 
 h2{
   font-family: sans-serif;
