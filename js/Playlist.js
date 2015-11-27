@@ -2,12 +2,13 @@ $(document).ready(function(){
   alert("All Systems GO");
 
   $("#fetch").on("click", function(){
+    $('#mydiv').html('');
+    var albumname = $("#albname").val();
    $.ajax({
        type : 'GET',
-       url : 'https://api.spotify.com/v1/search?query=hypnotize&limit=1&type=album',
+       url : 'https://api.spotify.com/v1/search?query='  +  albumname   +  '&limit=1&type=album',
      dataType : 'json',
        success : function(albumdata) {
-         $('body').append("<img src=\"" + albumdata.albums.items[0].images[1]["url"] + "\"></img>"); //OFFICIAL ALBUM DAT
         // alert(albumdata.albums.items[0].id); //OFFICIAL ID
 
                 $.ajax({
@@ -15,14 +16,18 @@ $(document).ready(function(){
                   url: 'https://api.spotify.com/v1/albums/' + albumdata.albums.items[0].id + '/tracks',
                   dataType: 'json',
                   success: function(trackdata){
-                    alert(trackdata.total); // TOTAL TRACKS
-                    alert(trackdata.items[0].artists[0].name); //BAND NAME
-                    alert(trackdata.items[0].name); //TRACK NAME
-                    alert(trackdata.items[0].preview_url); //PREVIEW TRACK
-                    alert(trackdata.items[0].external_urls.spotify); // ABRIR EN SPOTIFY
+
+                    var tracknumber = trackdata.total;
+
+                  for (i=0; i<tracknumber; i++){
+                   $('#mydiv').append("<img src=\"" + albumdata.albums.items[0].images[1]["url"] + "\"></img><br>"); // ALBUM IMAGE
+                    $('#mydiv').append(trackdata.items[i].artists[0].name + "<br>"); //BAND NAME
+                    $('#mydiv').append("<a href=\"" + trackdata.items[i].preview_url + "\">" + trackdata.items[i].name + "</a><br>") //ALBUM TRACK WITH ADDED LINK TO PREVIEW
+                    $('#mydiv').append("<a href=\"" + trackdata.items[i].external_urls.spotify + "\"class=\"btn btn-info btn-lg\"> ABRIR EN SPOTIFY</a><br><br><br><br><br>"); // ABRIR EN SPOTIFY     POTIFY
+                   }
                   },
-                  error: function(){
-                       $('body').append("pito algo salio mal track");
+                  error: function(errormsg){
+                       alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
                   }
 
 
@@ -34,8 +39,8 @@ $(document).ready(function(){
 
 
        }, //MOTHER AJAX ERROR SWITCH HANDLER
-       error : function(){
-           $('body').append("pito algo salio mal");
+       error : function(errormsg2){
+           alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
        }
    }); //MOTHER AJAX HANDLER
 
