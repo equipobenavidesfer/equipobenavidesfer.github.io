@@ -22,7 +22,7 @@ $(document).ready(function(){
                   for (i=0; i<tracknumber; i++){
                    $('#mydiv').append("<img src=\"" + albumdata.albums.items[0].images[1]["url"] + "\"></img><br>"); // ALBUM IMAGE
                     $('#mydiv').append(trackdata.items[i].artists[0].name + "<br>"); //BAND NAME
-                    $('#mydiv').append("<a href=\"" + trackdata.items[i].preview_url + "\">" + trackdata.items[i].name + "</a><br>") //ALBUM TRACK WITH ADDED LINK TO PREVIEW
+                    $('#mydiv').append("<a href=\"" + trackdata.items[i].preview_url + "\" target=\"_blank\">" + trackdata.items[i].name + "</a><br>") //ALBUM TRACK WITH ADDED LINK TO PREVIEW
                     $('#mydiv').append("<a href=\"" + trackdata.items[i].external_urls.spotify + "\"class=\"btn btn-info btn-lg\"> ABRIR EN SPOTIFY</a><br><br><br><br><br>"); // ABRIR EN SPOTIFY     POTIFY
                    }
                   },
