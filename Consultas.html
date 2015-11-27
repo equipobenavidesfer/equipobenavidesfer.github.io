@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>T18 - Consulta Individual</title>
+    <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  </head>
+  <body>
+      <header><h1> Consultas </h1></header>
+<h2 align="center"> Ingrese el ID del alumno a consultar: <br> </h2>
+      <form>
+<div id="idtext"><b>ID:</b></div> <input type="number" placeholder="80" id="inputID">
+<button class="btn btn-default" type="button" id="consultas">Consultar</button>
+      </form>
+
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+<p id=#anojugoso> caca rancia </p>
+              <script>
+                  $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=10&format=json&callback=?", function(json) {
+                      var html = '';
+                      $.each(json.topartists.artist, function(i, item) {
+                          html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+                      });
+                      $('#result').append("#anojugoso");
+                  });
+
+              </script>
+              <div id="result"></div>
+              </body>
+              </html>
+
+
+
+
+
+
+
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+<table>
+  <thead>
+    <th>Id</th>
+    <th>Matricula</th>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Estatus</th>
+  </thead>
+  <tbody>
+
+  </tbody>
+  <tfoot>
+
+  </tfoot>
+</table>
+<script src="js/jquery-1.10.1.min.js"> </script>
+<script src="js/t18.js"></script>
+<script src="js/bootstrap.min.js">
+
+</script>
+
+</script>
+
+
+
+  </body>
+</html>
