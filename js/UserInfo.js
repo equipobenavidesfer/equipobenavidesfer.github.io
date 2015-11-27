@@ -2,9 +2,33 @@ $(document).ready(function(){
 
 
 
-  $('body').on('click', '.artistcl', function() {
+  $('body').on('click', '.artistcl', function() { //Artist Lookup para el modal
+    $(".modal-body").html('');
   var artistlookup = $(this).text();
-  alert(artistlookup); //TO ADD: A MODAL TO THE HTML, AND AN ARTIST LOOKUP USING THIS STRING, ATTACHING TO THE MODAL :)
+    $.ajax({
+        type : 'POST',
+        url : 'http://ws.audioscrobbler.com/2.0/',
+        data : 'method=artist.getinfo&' +
+               'artist=' + artistlookup + '&' +
+               'api_key=57ee3318536b23ee81d6b27e36997cde&' +
+               'format=json',
+        dataType : 'jsonp',
+        success : function(data) {
+            $('#myModal').modal('show');
+            $('.modal-body').append(data.artist.name + '<br>'); // Nombre de Artista
+            $('.modal-body').append('<img src="' + data.artist.image[2]['#text'] + '" /><br>'); //Foto de artista
+            $('.modal-body').append(data.artist.stats.listeners + '<p> Oyentes </p><br>'); //Listeners
+            $('.modal-body').append(data.artist.stats.playcount + '<p> Reproducciones </p><br>'); // playcount
+            $('.modal-body').append(data.artist.bio.content); //Biografia artista
+        },
+        error : function(code, message){
+            alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
+        }
+    });
+
+// FALTARA UN ENDER?
+
+  //TO ADD: A MODAL TO THE HTML, AND AN ARTIST LOOKUP USING THIS STRING, ATTACHING TO THE MODAL :)
 });
 
 
