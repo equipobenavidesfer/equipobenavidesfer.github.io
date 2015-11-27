@@ -1,8 +1,12 @@
 $(document).ready(function(){
+alert("Everything A-OK");
 
 
 
-  $('body').on('click', '.artistcl', function() { //Artist Lookup para el modal
+
+
+
+  $('body').on('click', '.artistcl', function() {    //Artist Lookup para el modal
     $(".modal-body").html('');
   var artistlookup = $(this).text();
     $.ajax({
@@ -17,9 +21,29 @@ $(document).ready(function(){
             $('#myModal').modal('show');
             $('.modal-body').append(data.artist.name + '<br>'); // Nombre de Artista
             $('.modal-body').append('<img src="' + data.artist.image[2]['#text'] + '" /><br>'); //Foto de artista
-            $('.modal-body').append(data.artist.stats.listeners + '<p> Oyentes </p><br>'); //Listeners
-            $('.modal-body').append(data.artist.stats.playcount + '<p> Reproducciones </p><br>'); // playcount
+            $('.modal-body').append('<p class=numunf>' + data.artist.stats.listeners + '</p><p> Oyentes </p>'); //Listeners
+            $('.modal-body').append('<p class=numunf>' + data.artist.stats.playcount + '</p><p> Reproducciones </p>'); // playcount
             $('.modal-body').append(data.artist.bio.content); //Biografia artista
+
+            function numberWithCommas(x) {   //Darle Formato de Comas a nuestros Scrobbles
+              return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+            }
+            $('.numunf').each(function(){
+              var v_pound = $(this).html();
+              v_pound = numberWithCommas(v_pound);
+
+              $(this).html(v_pound)
+
+            });
+
+
+
+
+
+
+
+
+
         },
         error : function(code, message){
             alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
@@ -32,11 +56,11 @@ $(document).ready(function(){
 });
 
 
-//alert("Systems Ready and Waiting.")
-  $("#usernamebtn").on("click", function(){
+
+  $("#usernamebtn").on("click", function(){ //Funcion buscador de usuario
     $('#mydiv').html('');
     $('#usersTop').html('');
-    var username = $("#usernametxt").val(); //MAKE ARTIST INTO LINK WITH CLASS, THEN US (THIS) TO GET EACH ARTIST NAME FOR LOOKUP
+    var username = $("#usernametxt").val();
       $.ajax({ //USER BASIC INFO
           type : 'POST',
           url : 'http://ws.audioscrobbler.com/2.0/',
@@ -71,15 +95,13 @@ $(document).ready(function(){
          dataType : 'jsonp',
          success : function(data) {
 
-    for (i=0; i<6; i++ ){
+    for (i=0; i<6; i++ ){ //Queremos 5 canciones únicamente
 
              $('#usersTop').append('<p class=\"artistcl\">' + data.recenttracks.track[i].artist['#text'] + '</p>'); //ARTIST. [0] = TRACK's NUMBER
               $('#usersTop').append(data.recenttracks.track[i].name); // Nombre de la pista
               $('#usersTop').append('<br>' + data.recenttracks.track[i].album['#text']); //Nombre del album
               $('#usersTop').append('<br><img src=\"' + data.recenttracks.track[i].image[1]['#text'] + '\"><br><br><br>'); //Img del album
-                $('#usersTop').append('<p>test</p>');
-          //    $('#success #artistBio').append('<br>' + data.recenttracks.album["#text"]);
-          //   $('#success #artistBio').append('<img src="' + data.recenttracks.image[1]['#text'] + '" />');
+
         }
          },
          error : function(code, message){
