@@ -1,7 +1,8 @@
 $(document).ready(function(){
-  alert("Affirmative. Awaiting Orders.");
-    var i = 1;
 
+
+  function myFunction(){//Funcion de cargar playlist
+  var i = 1;
   $.ajax({  // LOAD PLAYLIST
 
   url: "http://rest.learncode.academy/api/learncode/playlist",
@@ -25,12 +26,13 @@ $(document).ready(function(){
   error : function(){
     alert("Lo siento, tu petición no puede ser procesada. Intenta de nuevo");
   }
-});  //LOAD PLAYLIST END
+});
+}
+myFunction(); //LOAD PLAYLIST END, FUNCTION END
 
 
 
 $("#agregar").on("click", function(){
-  alert("clicked");
 var artistName = $("#artistan").val();
 var albumName = $("#albumn").val();
 var pistaName = $("#pistan").val();
@@ -43,8 +45,12 @@ dataType: 'json',
 error: function(){alert("Lo siento, no se ha podido tu petición. Por favor, intente de nuevo.");},
 success: function(data){
   alert("Subida Exitosa!");
-  $("table tbody").append(  "<tr><td>" + i +"</td><td>"+ data.Artist +
-    "</td><td>" + data.Album + "</td><td>" + data.Track + "</td><td><button type=\"button\" id=\"" + data.id + "\" class=\"btn btn-info btn-lg\" id=\"fetch\" >D</button></td></tr>");
+  $("table tbody").html('');
+  myFunction();
+
+
+// $("table tbody").append(  "<tr><td>" + i +"</td><td>"+ data.Artist +
+//    "</td><td>" + data.Album + "</td><td>" + data.Track + "</td><td><button type=\"button\" id=\"" + data.id + "\" class=\"btn btn-info btn-lg\" id=\"fetch\" >D</button></td></tr>"); 
 //i = i+1;
 
 }
@@ -63,7 +69,19 @@ success: function(data){
 $("table").on("click", "button", function(){ //DELETE OPERATIONS START
 
   var show_id = this.id;
-      alert(show_id);
+  $.ajax({
+  type: 'DELETE',
+  url: 'http://rest.learncode.academy/api/learncode/playlist/' + show_id,
+  success: function() {
+    alert("Eliminación Exitosa!")
+    $("table tbody").html('');
+    myFunction();
+  }
+
+
+
+
+}); // Ajax function end
 
 
 });
