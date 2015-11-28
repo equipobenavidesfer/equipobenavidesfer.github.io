@@ -61,6 +61,10 @@ ul {
   margin-left: 50px;
 }
 
+
+#mylogo{
+  float:left;
+}
 /* Navbar End */
 
 
@@ -68,6 +72,10 @@ body{
   background: linear-gradient(white, lightgray)
 }
 
+
+table td:hover{
+  color: red;
+}
 
 #welc{
   margin-left: 80px;

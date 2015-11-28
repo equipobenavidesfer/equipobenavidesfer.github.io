@@ -113,6 +113,11 @@ li{
   color: lightgreen;
 }
 
+
+#mylogo{
+  float:left;
+}
+
 #goto{
   margin-left: auto;
   margin-right: auto;
@@ -125,6 +130,8 @@ li{
     margin-right: 300px;
 
   }
+
+
 
 }
 .demo-title {

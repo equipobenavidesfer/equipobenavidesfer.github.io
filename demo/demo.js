@@ -2,6 +2,8 @@
  * MovingBoxes demo script
  */
 
+$("li").on("hover", function(){alert("hola");})
+
 $(function(){
 
 	$('#slider-one').movingBoxes({

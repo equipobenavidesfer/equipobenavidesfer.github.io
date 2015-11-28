@@ -57,6 +57,12 @@ ul {
   margin-left: 50px;
 }
 
+
+#mylogo{
+  float:left;
+  width: 490px;
+  height: 200px;
+}
 /* Navbar End */
 
 body{
