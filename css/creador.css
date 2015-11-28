@@ -2,74 +2,214 @@ html{
   margin-left: 60px;
 padding: 10px;
 width: 1250px;
-height:1400px;
-overflow: auto;
-background-color: #d1e8ff;
+min-height: 800px;
+overflow: scroll;
+border: 1px solid red;
 }
 
-header{
-  border: 6px solid black;
-  background-color: lightpink;
+#modalopener, #agregar{
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #cdc;
+  margin-top: 25px;
+  font-weight: bold;
+  font-family: Varela Round;
 }
 
-header h1{
-  text-align: center;
-  font-family: fantasy;
-  font-size: 36px;
-  padding: 3px;
 
-}
 
-#subir{
-  margin-left: 250px;
+#arrow, #plus{
+  margin-left: 6px;
 }
-
- /*label{
-    display: inline-block;
-    float: left;
-    clear: left;
-    width: 250px;
-    text-align: right;
-    padding: 2px;
-}
-input {
-  display: inline-block;
-  float: left;
-}*/
 
 h2{
-  font-family: sans-serif;
-  text-shadow: 2px 2px #949494;
-  font-size: 34px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 32px;
+  font-family: Lato;
+  color: darkgray;
 }
+
+
+#userprofile #usernametxt p{
+
+font-size: 48px;
+font-family: Nunito;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+margin-top: 30px;
+
+}
+
+
+#userprofile #usernameimg img{
+
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #cdc;
+}
+
+#userprofile #usernamescrobbles p{
+
+  font-family: varela-round;
+  font-size: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 8px;
+}
+
+
+
+
+#userprofile #misc p{
+
+  font-family: lato;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 4px;
+}
+
+
+#mydiv p{
+
+font-size: 42px;
+margin-left: 125px;
+font-family: Lato;
+margin-top: 25px;
+margin-bottom: 35px;
+text-shadow: 2px 2px 8px #cdc
+
+}
+
+
+
+
+
+tbody .row{
+   background-color: gray;
+}
+
+
 
 table{
-  margin-left: 350px;
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-left: 190px;
+  width: 800px;
 }
 
 
-th{
-  font-size: 26px;
-  padding: 7px;
-  align-items: center;
-
+.artistcl{
+  color: #337ab7;
+  cursor: pointer;
 }
 
-table, th, td{
-  border: 1px solid black;
-}
-
-th{
-  background-color: #8d8d8d;
-
+.artistcl:hover{
+  text-decoration: underline;
 }
 
 
-td{
-  text-align: center;
-  padding: 3px;
+table a{
+  font-size: 20px;
+  font-family: Varela Round;
   font-weight: bold;
-  background-color: #d9ff33;
+}
 
+table p{
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: Varela Round;
+}
+
+table th{
+  padding: 5px;
+  font-size: 29px;
+  font-family: Nunito;
+  text-align: center;
+
+}
+
+
+
+#usernamebtn{
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Varela Round;
+}
+
+
+table tr{
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+table td{
+
+  font-size: 22px;
+  text-shadow: 2px 2px 2px #cdc;
+  font-family: Josefin Sans;
+}
+
+
+table td{
+  width: 50px;
+  height: 90px;
+  overflow: auto;
+  padding: 5px;
+  text-align:center;
+
+}
+
+tbody td {
+  width: 149px;
+}
+
+
+h4{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+.modal-body h3{
+
+  font-size: 48px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Varela Round;
+
+}
+
+
+.modal-body img{
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #cdc;
+}
+
+.numunf{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #337ab7;
+  text-shadow: 2px 2px 2px #cdc;
+  font-family: lato;
+}
+
+.modal-body p{
+  text-align: center;
+}
+
+#tagged{
+  font-weight: bold;
+  font-family: Varela Round;
 }

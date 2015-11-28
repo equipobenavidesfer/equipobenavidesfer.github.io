@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
   function myFunction(){//Funcion de cargar playlist
   var i = 1;
   $.ajax({  // LOAD PLAYLIST
@@ -14,7 +13,9 @@ $(document).ready(function(){
       $("table tbody").append(
 
         "<tr><td>" + i +"</td><td>"+ data[index].Artist +
-        "</td><td>" + data[index].Album + "</td><td>" + data[index].Track + "</td><td><button type=\"button\" id=\"" + data[index].id + "\" class=\"btn btn-info btn-lg\" id=\"fetch\" >D</button></td></tr>"
+        "</td><td>" + data[index].Album + "</td><td>" + data[index].Track +
+        "</td><td><button type=\"button\" id=\"" + data[index].id +
+        "\" class=\"btn-danger btn-lg\" id=\"fetch\" ><i class=\"fa fa-trash fa-lg\"></i></button></td></tr>"
 
   //hacer otro documento html aside index, que cuando se cargue
 
@@ -33,9 +34,9 @@ myFunction(); //LOAD PLAYLIST END, FUNCTION END
 
 
 $("#agregar").on("click", function(){
-var artistName = $("#artistan").val();
-var albumName = $("#albumn").val();
-var pistaName = $("#pistan").val();
+var artistName = $("#artistan").val(); alert(artistName);
+var albumName = $("#albumn").val();  alert(albumName);
+var pistaName = $("#pistan").val(); alert(pistaName);
 
     $.ajax({
 type: "POST",
@@ -50,7 +51,7 @@ success: function(data){
 
 
 // $("table tbody").append(  "<tr><td>" + i +"</td><td>"+ data.Artist +
-//    "</td><td>" + data.Album + "</td><td>" + data.Track + "</td><td><button type=\"button\" id=\"" + data.id + "\" class=\"btn btn-info btn-lg\" id=\"fetch\" >D</button></td></tr>"); 
+//    "</td><td>" + data.Album + "</td><td>" + data.Track + "</td><td><button type=\"button\" id=\"" + data.id + "\" class=\"btn btn-info btn-lg\" id=\"fetch\" >D</button></td></tr>");
 //i = i+1;
 
 }
