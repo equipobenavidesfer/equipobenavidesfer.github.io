@@ -1,0 +1,132 @@
+/* Moving Boxes demo CSS */
+
+/*Navbar start */
+
+
+#navbar{
+
+  width: 1350px;
+  height:200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/watercolor-grunge/watercolor-grunge-000018-bright-green.jpg");
+   border: 5px solid black;
+   box-shadow: 10px 10px 5px #cdc;
+
+}
+
+#navbar h1{
+float: left;
+margin-top: 55px;
+font-size: 75px;
+font-family: Londrina+Outline;
+color: darkgreen;
+/*text-shadow: 2px 2px 2px #cdc;*/
+font-weight: 600;
+text-shadow: 4px 4px 4px #cdc;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+#navbar li {
+    float: left;
+}
+
+#navbar a {
+    display: block;
+    width: 60px;
+    margin-right:100px;
+    margin-top: 150px;
+    font-family: lato;
+    font-size: 28px;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+#wrapper{
+  margin-left: 50px;
+}
+
+/* Navbar End */
+
+
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 16px/1.4 'PT Sans', sans-serif;
+}
+
+.demo-title {
+  text-align: center;
+  color: #a71700;
+  text-transform: uppercase;
+  padding: 30px 0 0;
+  font-size: 60px;
+}
+
+/* Navigation bar */
+.main-nav {
+  display: block;
+  text-align: center;
+  border-bottom: 2px solid #a71700;
+  margin: 0 0 20px 0;
+  padding: 0 0 10px 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #3e63ec;
+  font-size: 18px;
+  margin: 0 8px;
+}
+.main-nav a:hover {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+/* Moving Boxes title image wrapper */
+#title {
+  text-align: center;
+}
+#title img {
+  border: 0;
+}
+
+/* Panel images */
+.mb-inside img { width: 100%; }
+
+/* height of the placeholder until image completely loads - needed for
+   webkit browsers, add this only if you don't want the height animation
+   on startup. 326px measures the height of the current image when enlarged
+*/
+#slider-two .current img { /* height: 326px; */ }
+
+/* Panel links */
+.mb-inside a { color: #333; text-decoration: none; border-bottom: 1px dotted #ccc; }
+.mb-inside a:hover { border-bottom: 1px solid #999; }
+
+/* Add/remove panels buttons */
+.buttons { padding: 5px 10px; text-align: center; }
+
+/* Direct link styling */
+.dlinks {
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+.dlinks * {
+  vertical-align: middle;
+}

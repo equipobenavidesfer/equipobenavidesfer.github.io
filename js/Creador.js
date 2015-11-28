@@ -34,9 +34,9 @@ myFunction(); //LOAD PLAYLIST END, FUNCTION END
 
 
 $("#agregar").on("click", function(){
-var artistName = $("#artistan").val(); alert(artistName);
-var albumName = $("#albumn").val();  alert(albumName);
-var pistaName = $("#pistan").val(); alert(pistaName);
+var artistName = $("#artistan").val();
+var albumName = $("#albumn").val();
+var pistaName = $("#pistan").val();
 
     $.ajax({
 type: "POST",

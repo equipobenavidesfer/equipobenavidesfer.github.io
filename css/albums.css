@@ -1,13 +1,73 @@
 
 html{
-  margin-left: 60px;
-padding: 10px;
 width: 1250px;
 min-height: 800px;
 overflow: scroll;
-border: 1px solid red;
 }
 
+/*Navbar start */
+
+
+#navbar{
+
+  width: 1350px;
+  height:200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/watercolor-grunge/watercolor-grunge-000018-bright-green.jpg");
+   border: 5px solid black;
+   box-shadow: 10px 10px 5px #cdc;
+
+}
+
+#navbar h1{
+float: left;
+margin-top: 55px;
+font-size: 75px;
+font-family: Londrina+Outline;
+color: darkgreen;
+/*text-shadow: 2px 2px 2px #cdc;*/
+font-weight: 600;
+text-shadow: 4px 4px 4px #cdc;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+#navbar li {
+    float: left;
+}
+
+#navbar a {
+    display: block;
+    width: 60px;
+    margin-right:100px;
+    margin-top: 150px;
+    font-family: lato;
+    font-size: 28px;
+    font-weight: bold;
+    color: darkgreen;
+}
+
+#wrapper{
+  margin-left: 50px;
+}
+
+/* Navbar End */
+
+body{
+  background: linear-gradient(white, lightgray)
+}
+
+#albname{
+
+margin-top: 40px;
+
+}
 
 #mydiv p{
 
