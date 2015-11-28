@@ -1,0 +1,60 @@
+
+html{
+  margin-left: 60px;
+padding: 10px;
+width: 1250px;
+height:1400px;
+overflow: auto;
+}
+
+
+
+
+img{
+  width: 110px;
+  height: 110px;
+}
+
+table{
+  width : 800px;
+}
+
+tbody .row{
+   background-color: gray;
+}
+
+
+
+table a{
+  font-size: 20px;
+  font-family: Varela Round;
+  font-weight: bold;
+}
+
+table p{
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: Varela Round;
+}
+
+table th{
+  padding: 5px;
+  font-size: 29px;
+  font-family: Nunito;
+  text-align: center;
+
+}
+
+table tr{
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+table td{
+  width: 50px;
+  height: 90px;
+  overflow: auto;
+  padding: 5px;
+  text-align:center;
+
+}
