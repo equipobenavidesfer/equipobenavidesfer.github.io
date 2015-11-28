@@ -1,6 +1,7 @@
 $(document).ready(function(){
   $("#fetch").on("click", function(){ //Funcion Madre: Buscador de Album
     $('table tbody').html('');
+    $('#mydiv').html('');
     var albumname = $("#albname").val();
        $.ajax({
        type : 'GET',
@@ -18,9 +19,9 @@ $(document).ready(function(){
                     $('table tbody').append("<td><img src=\"" + albumdata.albums.items[0].images[1]["url"] + "\"></img></td>"); // Imágen de Album
                     $('table tbody').append("<td><p>" + trackdata.items[i].artists[0].name + "</p></td>"); //Nombre de la banda
                     $('table tbody').append("<td><a href=\"" + trackdata.items[i].preview_url +
-                    "\" target=\"_blank\">" + trackdata.items[i].name + "</a></td>") //Pista de album con link para preview
+                    "\" target=\"_blank\">" + trackdata.items[i].name + "</a><i class=\"fa fa-volume-up fa-lg\"></i></td>") //Pista de album con link para preview
                     $('table tbody').append("<td><a href=\"" + trackdata.items[i].external_urls.spotify +
-                    "\"class=\"btn btn-info btn-lg\"> ABRIR EN SPOTIFY</a></td>"); // Link para abrir en Spotify
+                    "\"class=\"btn btn-info btn-lg\"> ABRIR EN SPOTIFY <i class=\"fa fa-external-link fa-inverse\"></i></a></td>"); // Link para abrir en Spotify
                    }
                   },
                   error: function(errormsg){
@@ -34,7 +35,5 @@ $(document).ready(function(){
    }); //MOTHER AJAX HANDLER
    });//click handler
 
-
-$('tbody tr').addClass("row");
 
 }); //DO NOT ERASE
