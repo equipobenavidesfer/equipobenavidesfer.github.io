@@ -1,5 +1,9 @@
 /* Moving Boxes demo CSS */
-
+html{
+width: 1250px;
+min-height: 800px;
+overflow: scroll;
+}
 /*Navbar start */
 
 
@@ -59,20 +63,28 @@ body{
   background: linear-gradient(white, lightgray)
 }
 
-
-
-
-
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);
-
-* {
-  margin: 0;
-  padding: 0;
+#welcome{
+  min-height:400px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  text-align: center;
 }
 
-body {
-  font: 16px/1.4 'PT Sans', sans-serif;
+#welcome p{
+  font-size: 16px;
+  color: black;
+  font-family: Nunito;
 }
+
+#welcome h1{
+font-size: 28px;
+color: black;
+text-shadow: 2px 2px #cdc;
+margin-left: 6px;
+}
+
 
 
 p{
@@ -89,6 +101,18 @@ h1{
   margin-top: 40px;
 }
 
+#welcome li{
+  font-family: lato;
+  color: lightgreen;
+  font-size: 45px;
+  text-shadow: 2px 2px 2px darkgreen;
+}
+
+li{
+  font-family: lato;
+  color: lightgreen;
+}
+
 #goto{
   margin-left: auto;
   margin-right: auto;
@@ -97,6 +121,10 @@ h1{
   font-family: Lato;
   margin-bottom: 8px;
 
+  .wrapper{
+    margin-right: 300px;
+
+  }
 
 }
 .demo-title {
@@ -133,6 +161,7 @@ h1{
 }
 #title img {
   border: 0;
+  margin: 8px;
 }
 
 /* Panel images */
@@ -145,7 +174,7 @@ h1{
 #slider-two .current img { /* height: 326px; */ }
 
 /* Panel links */
-.mb-inside a { color: #333; text-decoration: none; border-bottom: 1px dotted #ccc; font-family: Nunito; }
+.mb-inside a { color: black; text-decoration: none; border-bottom: 1px dotted #ccc; font-family: Nunito; }
 .mb-inside a:hover { border-bottom: 1px solid #999; }
 
 /* Add/remove panels buttons */
