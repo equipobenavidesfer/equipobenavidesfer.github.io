@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  $("h2").hide();
+  $(".table-striped").hide();
   $('body').on('click', '.artistcl', function() {    //Artist Lookup para el modal
     $(".modal-body").html('');
   var artistlookup = $(this).text();
@@ -12,10 +14,10 @@ $(document).ready(function(){
         dataType : 'jsonp',
         success : function(data) {
             $('#myModal').modal('show');
-            $('.modal-body').append(data.artist.name + '<br>'); // Nombre de Artista
+            $('.modal-body').append('<h3>' + data.artist.name + '</h3><br>'); // Nombre de Artista
             $('.modal-body').append('<img src="' + data.artist.image[2]['#text'] + '" /><br>'); //Foto de artista
-            $('.modal-body').append('<p class=numunf>' + data.artist.stats.listeners + '</p><p> Oyentes </p>'); //Listeners
-            $('.modal-body').append('<p class=numunf>' + data.artist.stats.playcount + '</p><p> Reproducciones </p>'); // Playcount
+            $('.modal-body').append('<p class=numunf>' + data.artist.stats.listeners + '</p><p id=\"tagged\"> Oyentes </p><br>'); //Listeners
+            $('.modal-body').append('<p class=numunf>' + data.artist.stats.playcount + '</p><p id=\"tagged\"> Reproducciones </p>'); // Playcount
             $('.modal-body').append(data.artist.bio.content); //Biografia artista
 
             function numberWithCommas(x) {   //Darle Formato de Comas a nuestros Scrobbles
@@ -34,9 +36,15 @@ $(document).ready(function(){
     }); //Click handler
 });
 
-  $("#usernamebtn").on("click", function(){ //Funcion buscador de usuario
+  $("#usernamebtn").on("click", function(){  //Funcion buscador de usuario
+    $("h2").show();
+    $(".table-striped").show();
     $('#mydiv').html('');
     $('#usersTop').html('');
+    $('#userprofile #usernametxt').html('');
+    $('#userprofile #usernameimg').html('');
+    $('#userprofile #usernamescrobbles').html('');
+    $('#userprofile #misc').html('');
     var username = $("#usernametxt").val();
       $.ajax({ //USER BASIC INFO
           type : 'POST',
@@ -47,12 +55,13 @@ $(document).ready(function(){
                  'format=json',
           dataType : 'jsonp',
           success : function(data) {
-              $('#mydiv').append(data.user.name + '<br>'); //Nombre de Usuario
-              $('#mydiv').append('<img src="' + data.user.image[3]['#text'] + '" /><br>'); //Imagen de Perfil
-              $('#mydiv').append('<br>' + data.user.country); //País
-              $('#mydiv').append('<br>' + data.user.age); //Edad
-              $('#mydiv').append('<br>' + data.user.playcount); //Scrobbles
-              $('#mydiv').append('<br><date uts=\"' + data.user.registered['#text'] + '">Fecha</date><br><br><br>'); //Fecha de Ingreso
+              $('#userprofile #usernametxt').append('<p>' + data.user.name + '</p>'); //Nombre de Usuario
+              $('#userprofile #usernameimg').append('<img src="' + data.user.image[3]['#text'] + '" />'); //Imagen de Perfil
+              $('#userprofile #usernamescrobbles').append('<p>Reproducciones: ' + data.user.playcount + '</p>'); //Scrobbles
+              $('#userprofile #misc').append('<p> País: ' + data.user.country + '   '); //País
+            //  $('#userprofile #misc').append('Edad: ' + data.user.age + '</p>'); //Edad, la dejamos fuera
+            //  $('#userprofile #misc').append('<br><date uts=\"' + data.user.registered['#text'] + '">Fecha</date><br><br><br>');
+            //Fecha de Ingreso, la dejamos fuera
           },
           error : function(code, message){
                alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
@@ -69,14 +78,16 @@ $(document).ready(function(){
                 'format=json',
          dataType : 'jsonp',
          success : function(data) {
-
+             $('#mytarget').html('');
     for (i=0; i<6; i++ ){ //Queremos 5 canciones únicamente
+              $('#mytarget').append('<tr></tr>');
+              $('#mytarget').append('<td><img src=\"' + data.recenttracks.track[i].image[1]['#text'] + '\"></td>'); //Img del album
+             $('#mytarget').append('<td><p class=\"artistcl\">' +
+             data.recenttracks.track[i].artist['#text'] + '<i class="fa fa-question-circle"></i></p></td>'); //Nombre de artista. [x] = Numero de la pista
+              $('#mytarget').append('<td><p>' + data.recenttracks.track[i].album['#text'] +'</p></td>'); //Nombre del album
+              $('#mytarget').append('<td><p>' + data.recenttracks.track[i].name + '</p></td>'); // Nombre de la pista
 
-             $('#usersTop').append('<p class=\"artistcl\">' +
-             data.recenttracks.track[i].artist['#text'] + '</p>'); //Nombre de artista. [x] = Numero de la pista
-              $('#usersTop').append(data.recenttracks.track[i].name); // Nombre de la pista
-              $('#usersTop').append('<br>' + data.recenttracks.track[i].album['#text']); //Nombre del album
-              $('#usersTop').append('<br><img src=\"' + data.recenttracks.track[i].image[1]['#text'] + '\"><br><br><br>'); //Img del album
+
         }
       }, //Success end
          error : function(code, message){

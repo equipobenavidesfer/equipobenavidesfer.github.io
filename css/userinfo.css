@@ -1,0 +1,202 @@
+html{
+  margin-left: 60px;
+padding: 10px;
+width: 1250px;
+min-height: 800px;
+overflow: scroll;
+border: 1px solid red;
+}
+
+h2{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 32px;
+  font-family: Lato;
+  color: darkgray;
+}
+
+
+#userprofile #usernametxt p{
+
+font-size: 48px;
+font-family: Nunito;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+margin-top: 30px;
+
+}
+
+
+#userprofile #usernameimg img{
+
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #cdc;
+}
+
+#userprofile #usernamescrobbles p{
+
+  font-family: varela-round;
+  font-size: 32px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 8px;
+}
+
+
+
+
+#userprofile #misc p{
+
+  font-family: lato;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-top: 4px;
+}
+
+
+#mydiv p{
+
+font-size: 42px;
+margin-left: 125px;
+font-family: Lato;
+margin-top: 25px;
+margin-bottom: 35px;
+text-shadow: 2px 2px 8px #cdc
+
+}
+
+
+
+
+
+tbody .row{
+   background-color: gray;
+}
+
+
+
+table{
+  margin-top: 40px;
+  margin-left: 190px;
+  width: 800px;
+}
+
+
+.artistcl{
+  color: #337ab7;
+  cursor: pointer;
+}
+
+.artistcl:hover{
+  text-decoration: underline;
+}
+
+
+table a{
+  font-size: 20px;
+  font-family: Varela Round;
+  font-weight: bold;
+}
+
+table p{
+  font-size: 20px;
+  margin-top: 10px;
+  font-family: Varela Round;
+}
+
+table th{
+  padding: 5px;
+  font-size: 29px;
+  font-family: Nunito;
+  text-align: center;
+
+}
+
+i {
+  margin-left: 6px;
+  color: #337ab7;
+}
+
+input{
+  width: 600px;
+  margin-top: 10px;
+  margin-left: 270px;
+}
+
+#usernamebtn{
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Varela Round;
+}
+
+
+table tr{
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+}
+
+
+table td{
+  width: 50px;
+  height: 90px;
+  overflow: auto;
+  padding: 5px;
+  text-align:center;
+
+}
+
+tbody td {
+  width: 149px;
+}
+
+
+h4{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+}
+
+.modal-body h3{
+
+  font-size: 48px;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: Varela Round;
+
+}
+
+
+.modal-body img{
+  display: block;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px #cdc;
+}
+
+.numunf{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #337ab7;
+  text-shadow: 2px 2px 2px #cdc;
+  font-family: lato;
+}
+
+.modal-body p{
+  text-align: center;
+}
+
+#tagged{
+  font-weight: bold;
+  font-family: Varela Round;
+}

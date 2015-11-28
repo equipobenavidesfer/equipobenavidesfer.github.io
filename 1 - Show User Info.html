@@ -7,19 +7,61 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/userinfo.css">
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400italic' rel='stylesheet' type='text/css'>
   <script src="js/UserInfo.js"></script>
 </head>
 <body>
 
-  <input type="text" placeholder="Bonemerang" id="usernametxt">
-  <button type="button" class="btn btn-info btn-lg" id="usernamebtn" >Buscar</button>
+  <input type="text" class="input-lg" placeholder="Te recomiendo ver los usuarios: Daikou, catsinspace, Bonemerang" id="usernametxt">
+  <button type="button" class="btn btn-success btn-lg"  id="usernamebtn" >Buscar <i class="fa fa-search fa-lg fa-inverse"></i></button>
                       <!-- div para datos del usuario -->
       <div id=mydiv><p>¡Ingresa el nombre del usuario del que deseas buscar detalles!</p></div>
+
+
+
+        <div id="userprofile">
+            <div id="usernametxt"></div>
+            <div id="usernameimg"></div>
+            <div id="usernamescrobbles"></div>
+            <div id="misc"></div>
+
+
+        </div>
+
+
+      <h2>Reproducciones Recientes del Usuario: </h2>
       <div id=usersTop></div> <!-- div que hospeda la tabla con los scrobbles recientes -->
 
+
+      <table class="table-striped">
+        <thead>
+          <th>Imagen</th>
+          <th>Artista</th>
+          <th>Álbum</th>
+          <th>Pista</th>
+        </thead>
+        <tbody id="mytarget">
+
+
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+      </table>
+
+
+
+
+
+
+
+
+
       <div class="container"> <!--div que hospeda el modal con para el artist lookup-->
-
-
         <!-- Modal -->
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
