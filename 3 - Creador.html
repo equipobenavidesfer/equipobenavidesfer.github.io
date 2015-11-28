@@ -10,11 +10,9 @@
     <title>Creador de Playlists</title>
     <link rel="stylesheet" href="css/creador.css">
   </head>
-  <body>
-    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click Aquí para Armar tu Playlist!</button>
 
-  <!--  <header><h1> Consultas </h1></header> -->
-
+<body>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Click Aquí para Armar tu Playlist!</button>
 <table>
   <thead>
     <th>#</th>
@@ -24,19 +22,15 @@
     <th>Borrar</th>
   </thead>
   <tbody>
-
+<!-- Aquí irá el contenido de nuestra playlist-->
   </tbody>
   <tfoot>
-
   </tfoot>
 </table>
-
 </script>
-
 </script>
 
 <div class="container"> <!--Modal para nuestro campo de inserción de playlist-->
-  <!-- Trigger the modal with a button -->
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -48,35 +42,23 @@
           <h4 class="modal-title">Añadir Canción a Playlist</h4>
         </div>
         <div class="modal-body">
-
-
-
-
+             <!--Campos de ingreso de información de playlist dentro de nuestra modal-->
           <h2 align="center"> Ingresa los datos solicitados: <br> </h2>
-                <form>
+            <form>
           <label><b>Artista:</b></label><br><input type="text" placeholder='Artista' id="artistan"><br><br>
           <label><b>Álbum:</b></label><br><input type="text" placeholder="Álbum" id="albumn"><br><br>
           <label><b>Pista:</b></label><br> <input type="text" placeholder="Pista" id="pistan"><br><br><br>
-
-
           <button type="button" id="agregar">Añadir</button>
-                </form>
-
-
-
-
+            </form>
 
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
-
     </div>
   </div>
-
 </div>
 
-
-  </body>
+</body>
 </html>

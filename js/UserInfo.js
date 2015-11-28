@@ -1,11 +1,4 @@
 $(document).ready(function(){
-alert("Everything A-OK");
-
-
-
-
-
-
   $('body').on('click', '.artistcl', function() {    //Artist Lookup para el modal
     $(".modal-body").html('');
   var artistlookup = $(this).text();
@@ -22,40 +15,24 @@ alert("Everything A-OK");
             $('.modal-body').append(data.artist.name + '<br>'); // Nombre de Artista
             $('.modal-body').append('<img src="' + data.artist.image[2]['#text'] + '" /><br>'); //Foto de artista
             $('.modal-body').append('<p class=numunf>' + data.artist.stats.listeners + '</p><p> Oyentes </p>'); //Listeners
-            $('.modal-body').append('<p class=numunf>' + data.artist.stats.playcount + '</p><p> Reproducciones </p>'); // playcount
+            $('.modal-body').append('<p class=numunf>' + data.artist.stats.playcount + '</p><p> Reproducciones </p>'); // Playcount
             $('.modal-body').append(data.artist.bio.content); //Biografia artista
 
             function numberWithCommas(x) {   //Darle Formato de Comas a nuestros Scrobbles
-              return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
-            }
-            $('.numunf').each(function(){
+              return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");}
+
+              $('.numunf').each(function(){
               var v_pound = $(this).html();
               v_pound = numberWithCommas(v_pound);
-
               $(this).html(v_pound)
 
             });
-
-
-
-
-
-
-
-
-
-        },
+        }, //Success end
         error : function(code, message){
             alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
-        }
-    });
-
-// FALTARA UN ENDER?
-
-  //TO ADD: A MODAL TO THE HTML, AND AN ARTIST LOOKUP USING THIS STRING, ATTACHING TO THE MODAL :)
+        } //Error end
+    }); //Click handler
 });
-
-
 
   $("#usernamebtn").on("click", function(){ //Funcion buscador de usuario
     $('#mydiv').html('');
@@ -72,19 +49,17 @@ alert("Everything A-OK");
           success : function(data) {
               $('#mydiv').append(data.user.name + '<br>'); //Nombre de Usuario
               $('#mydiv').append('<img src="' + data.user.image[3]['#text'] + '" /><br>'); //Imagen de Perfil
-            $('#mydiv').append('<br>' + data.user.country); //País
-             $('#mydiv').append('<br>' + data.user.age); //Edad
-          $('#mydiv').append('<br>' + data.user.playcount); //Scrobbles
-            $('#mydiv').append('<br><date uts=\"' + data.user.registered['#text'] + '">Fecha</date><br><br><br>'); //Fecha de Ingreso
+              $('#mydiv').append('<br>' + data.user.country); //País
+              $('#mydiv').append('<br>' + data.user.age); //Edad
+              $('#mydiv').append('<br>' + data.user.playcount); //Scrobbles
+              $('#mydiv').append('<br><date uts=\"' + data.user.registered['#text'] + '">Fecha</date><br><br><br>'); //Fecha de Ingreso
           },
           error : function(code, message){
                alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
           }
-      });
-     //USER BASIC INFO end
+      }); //USER BASIC INFO end
 
-     //USER TOP TRACKS
-     $.ajax({
+     $.ajax({    //USER TOP TRACKS
          type : 'POST',
          url : 'http://ws.audioscrobbler.com/2.0/',
          data : 'method=user.getRecentTracks&' +
@@ -97,26 +72,17 @@ alert("Everything A-OK");
 
     for (i=0; i<6; i++ ){ //Queremos 5 canciones únicamente
 
-             $('#usersTop').append('<p class=\"artistcl\">' + data.recenttracks.track[i].artist['#text'] + '</p>'); //ARTIST. [0] = TRACK's NUMBER
+             $('#usersTop').append('<p class=\"artistcl\">' +
+             data.recenttracks.track[i].artist['#text'] + '</p>'); //Nombre de artista. [x] = Numero de la pista
               $('#usersTop').append(data.recenttracks.track[i].name); // Nombre de la pista
               $('#usersTop').append('<br>' + data.recenttracks.track[i].album['#text']); //Nombre del album
               $('#usersTop').append('<br><img src=\"' + data.recenttracks.track[i].image[1]['#text'] + '\"><br><br><br>'); //Img del album
-
         }
-         },
+      }, //Success end
          error : function(code, message){
               alert("Lo siento, tu petición no puede ser procesada, por favor intenta de nuevo.");
          }
          //USER TOP TRACKS end
      });
-
-
-
-
    });//click handler
-
-
-
-
-
 }); //DO NOT ERASE
